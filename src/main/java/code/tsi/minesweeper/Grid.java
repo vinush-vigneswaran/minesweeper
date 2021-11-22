@@ -57,8 +57,11 @@ public class Grid {
     public void viewGrid() {
         // print game grid as newline arrays
         System.out.println(Arrays.deepToString(this.gameGrid));
+
+
+
         for (int i = 0; i < this.gridSizeY; i++) {
-            //System.out.println(Arrays.deepToString(this.gameGrid[0]));
+            System.out.println(Arrays.deepToString(this.gameGrid));
         }
         //return Arrays.deepToString(this.gameGrid);
     }
