@@ -10,6 +10,8 @@ public class Grid {
     private int gridSizeX;
     private int gridSizeY;
     private char[][] gameGrid;
+    private int[][] mineNumGrid;
+    private int[][] mineLocation;
 
 
     //////////////////////////////////Constructor//////////////////////////////////
@@ -36,13 +38,17 @@ public class Grid {
         Random randNum = new Random();
 
         //assign bomb(b) or field(o) to each cell
-        for (int i = 0; i < gridSizeY; i++) {
-            for (int j = 0; j < gridSizeX; j++) {
+        for (int i = 0; i < gridSizeX; i++) {
+            for (int j = 0; j < gridSizeY; j++) {
                 int randInt = randNum.nextInt(100);
 
                 // random bomb distribution
                 if(randInt <= 20){
-                    gameGrid[i][j] = 'm'; //bomb
+                    gameGrid[i][j] = 'm'; //mine
+//                    int[] currLoc = {i, j};
+//                    //Coordinates.arrayOfCoordinates(i,j);
+//                    System.out.println(Arrays.toString(currLoc));
+                    //this.mineLocation = ArrayUtils.add(this.mineLocation, currLoc) ;//store location
                 }
                 else{
                     gameGrid[i][j] = 'o'; //avail cell
@@ -55,19 +61,22 @@ public class Grid {
     }
 
     public void viewGrid() {
-        // print game grid as newline arrays
-        System.out.println(Arrays.deepToString(this.gameGrid));
+        //print game grid as newline arrays
+        //System.out.println(Arrays.deepToString(this.gameGrid));
+        //to add: coordinate ticks
 
 
-
-        for (int i = 0; i < this.gridSizeY; i++) {
-            System.out.println(Arrays.deepToString(this.gameGrid));
+        for (char[] row : this.gameGrid) {
+            for (char val : row) {
+                System.out.print(val + "  ");
+            }
+            //split into new lines
+            System.out.println();
         }
-        //return Arrays.deepToString(this.gameGrid);
     }
 
     public String bombNumGrid() {
-        return Arrays.deepToString(this.gameGrid);
+        return Arrays.deepToString(this.mineNumGrid);
     }
 
     public void setGrid(int size) {

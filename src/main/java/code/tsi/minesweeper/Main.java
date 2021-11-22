@@ -10,7 +10,7 @@ public class Main {
 
         //System.out.println(Arrays.deepToString(game1.createNewGrid(5,5)));
 
-        game1.createNewGrid(5,5);
+        game1.createNewGrid(5,15);
         game1.viewGrid();
 
     }

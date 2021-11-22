@@ -1,0 +1,31 @@
+package code.tsi.minesweeper;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Coordinates {
+    //////////////////////////////////Attribute//////////////////////////////////
+    private int x;
+    private int y;
+    //private int[][] coordinateList;
+    ArrayList<int[]> coordinateList = new ArrayList<int[]>();
+
+    //////////////////////////////////Constructor//////////////////////////////////
+    public Coordinates(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+
+    //////////////////////////////////Methods//////////////////////////////////
+
+    public ArrayList<int[]> arrayOfCoordinates(int x, int y){
+        //this.coordinateList = coordinateList;
+
+        //int[] coordinates = {x, y};
+        //this.coordinateList.add(coordinates);
+        return this.coordinateList;
+    }
+
+
+}
