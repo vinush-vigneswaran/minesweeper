@@ -20,12 +20,14 @@ public class Grid {
     public Grid(int gridSizeX, int gridSizeY){
         this.gridSizeY = gridSizeY;
         this.gridSizeX = gridSizeX;
-        this.gameGrid = gameGrid;
     }
 
     //////////////////////////////////Methods//////////////////////////////////
 
     public char[][] createNewGrid(int gridSizeX, int gridSizeY) {
+
+        this.gridSizeY = gridSizeY;
+        this.gridSizeX = gridSizeX;
 
         //create a 2d array
         char gameGrid[][]  = new char[gridSizeX][gridSizeY];
@@ -40,7 +42,7 @@ public class Grid {
 
                 // random bomb distribution
                 if(randInt <= 20){
-                    gameGrid[i][j] = 'b'; //bomb
+                    gameGrid[i][j] = 'm'; //bomb
                 }
                 else{
                     gameGrid[i][j] = 'o'; //avail cell
@@ -54,8 +56,9 @@ public class Grid {
 
     public void viewGrid() {
         // print game grid as newline arrays
+        System.out.println(Arrays.deepToString(this.gameGrid));
         for (int i = 0; i < this.gridSizeY; i++) {
-            System.out.println(Arrays.deepToString(this.gameGrid));
+            //System.out.println(Arrays.deepToString(this.gameGrid[0]));
         }
         //return Arrays.deepToString(this.gameGrid);
     }
