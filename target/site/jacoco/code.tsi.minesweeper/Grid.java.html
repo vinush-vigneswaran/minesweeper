@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Grid.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SimpleMinesweeper</a> &gt; <a href="index.source.html" class="el_package">code.tsi.minesweeper</a> &gt; <span class="el_source">Grid.java</span></div><h1>Grid.java</h1><pre class="source lang-java linenums">package code.tsi.minesweeper;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class Grid {
+
+
+    //////////////////////////////////Attribute//////////////////////////////////
+    private int gridSizeX;
+    private int gridSizeY;
+    private char[][] gameGrid;
+    private int[][] mineNumGrid;
+    private int[][] mineLocation;
+
+
+    //////////////////////////////////Constructor//////////////////////////////////
+<span class="nc" id="L18">    public Grid(){</span>
+        //
+<span class="nc" id="L20">    }</span>
+
+<span class="nc" id="L22">    public Grid(int gridSizeX, int gridSizeY){</span>
+<span class="nc" id="L23">        this.gridSizeY = gridSizeY;</span>
+<span class="nc" id="L24">        this.gridSizeX = gridSizeX;</span>
+<span class="nc" id="L25">    }</span>
+
+    //////////////////////////////////Methods//////////////////////////////////
+
+    public char[][] createNewGrid(int gridSizeX, int gridSizeY) {
+
+<span class="nc" id="L31">        this.gridSizeY = gridSizeY;</span>
+<span class="nc" id="L32">        this.gridSizeX = gridSizeX;</span>
+
+        //create a 2d array
+<span class="nc" id="L35">        char gameGrid[][]  = new char[gridSizeX][gridSizeY];</span>
+
+        //get random number
+<span class="nc" id="L38">        Random randNum = new Random();</span>
+
+        //assign bomb(b) or field(o) to each cell
+<span class="nc bnc" id="L41" title="All 2 branches missed.">        for (int i = 0; i &lt; gridSizeX; i++) {</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">            for (int j = 0; j &lt; gridSizeY; j++) {</span>
+<span class="nc" id="L43">                int randInt = randNum.nextInt(100);</span>
+
+                // random bomb distribution
+<span class="nc bnc" id="L46" title="All 2 branches missed.">                if(randInt &lt;= 20){</span>
+<span class="nc" id="L47">                    gameGrid[i][j] = 'm'; //mine</span>
+//                    int[] currLoc = {i, j};
+//                    //Coordinates.arrayOfCoordinates(i,j);
+//                    System.out.println(Arrays.toString(currLoc));
+                    //this.mineLocation = ArrayUtils.add(this.mineLocation, currLoc) ;//store location
+                }
+                else{
+<span class="nc" id="L54">                    gameGrid[i][j] = 'o'; //avail cell</span>
+                }
+            }
+        }
+<span class="nc" id="L58">        this.gameGrid = gameGrid;</span>
+        //System.out.println(Arrays.deepToString(this.gameGrid));
+<span class="nc" id="L60">        return this.gameGrid;</span>
+    }
+
+    public void viewGrid() {
+        //print game grid as newline arrays
+        //System.out.println(Arrays.deepToString(this.gameGrid));
+        //to add: coordinate ticks
+
+
+<span class="nc bnc" id="L69" title="All 2 branches missed.">        for (char[] row : this.gameGrid) {</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">            for (char val : row) {</span>
+<span class="nc" id="L71">                System.out.print(val + &quot;  &quot;);</span>
+            }
+            //split into new lines
+<span class="nc" id="L74">            System.out.println();</span>
+        }
+<span class="nc" id="L76">    }</span>
+
+    public String bombNumGrid() {
+<span class="nc" id="L79">        return Arrays.deepToString(this.mineNumGrid);</span>
+    }
+
+    public void setGrid(int size) {
+
+<span class="nc" id="L84">    }</span>
+
+    public void getGrid() {
+
+<span class="nc" id="L88">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
