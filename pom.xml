@@ -25,21 +25,14 @@
 
         <dependency>
             <groupId>org.jacoco</groupId>
-            <artifactId>org.jacoco.ant</artifactId>
+            <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.8.7</version>
         </dependency>
     </dependencies>
 
 
-    <build>
+        <build>
         <plugins>
-
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.7</version>
-            </plugin>
-
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -62,6 +55,8 @@
             </plugin>
         </plugins>
     </build>
+
+
 
 </project>
 
