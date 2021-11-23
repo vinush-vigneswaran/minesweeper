@@ -2,7 +2,7 @@ GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_
 SimpleMinesweeper,code.tsi.minesweeper,CellGrid,3,0,0,0,1,0,1,0,1,0
 SimpleMinesweeper,code.tsi.minesweeper,MainlandCell,14,0,0,0,6,0,3,0,3,0
 SimpleMinesweeper,code.tsi.minesweeper,Coordinates,17,0,0,0,6,0,2,0,2,0
-SimpleMinesweeper,code.tsi.minesweeper,Grid,112,0,10,0,26,0,12,0,7,0
+SimpleMinesweeper,code.tsi.minesweeper,Grid,55,57,4,6,12,14,7,5,5,2
 SimpleMinesweeper,code.tsi.minesweeper,Main,15,0,0,0,5,0,2,0,2,0
 SimpleMinesweeper,code.tsi.minesweeper,Selected,15,0,0,0,7,0,4,0,4,0
 SimpleMinesweeper,code.tsi.minesweeper,FieldCell,11,0,0,0,5,0,3,0,3,0

@@ -1,12 +1,13 @@
 package code.tsi.minesweeper;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GridTest {
+public class TestGrid {
 
     @Test
-    public void testGridSize(){
+    public void GridSizeTest(){
 
         int testGridSizeX = 9, testGridSizeY = 7;
 

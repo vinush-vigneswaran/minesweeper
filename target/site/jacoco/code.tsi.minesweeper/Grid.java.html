@@ -15,9 +15,9 @@ public class Grid {
 
 
     //////////////////////////////////Constructor//////////////////////////////////
-<span class="nc" id="L18">    public Grid(){</span>
+<span class="fc" id="L18">    public Grid(){</span>
         //
-<span class="nc" id="L20">    }</span>
+<span class="fc" id="L20">    }</span>
 
 <span class="nc" id="L22">    public Grid(int gridSizeX, int gridSizeY){</span>
 <span class="nc" id="L23">        this.gridSizeY = gridSizeY;</span>
@@ -28,36 +28,36 @@ public class Grid {
 
     public char[][] createNewGrid(int gridSizeX, int gridSizeY) {
 
-<span class="nc" id="L31">        this.gridSizeY = gridSizeY;</span>
-<span class="nc" id="L32">        this.gridSizeX = gridSizeX;</span>
+<span class="fc" id="L31">        this.gridSizeY = gridSizeY;</span>
+<span class="fc" id="L32">        this.gridSizeX = gridSizeX;</span>
 
         //create a 2d array
-<span class="nc" id="L35">        char gameGrid[][]  = new char[gridSizeX][gridSizeY];</span>
+<span class="fc" id="L35">        char gameGrid[][]  = new char[gridSizeX][gridSizeY];</span>
 
         //get random number
-<span class="nc" id="L38">        Random randNum = new Random();</span>
+<span class="fc" id="L38">        Random randNum = new Random();</span>
 
         //assign bomb(b) or field(o) to each cell
-<span class="nc bnc" id="L41" title="All 2 branches missed.">        for (int i = 0; i &lt; gridSizeX; i++) {</span>
-<span class="nc bnc" id="L42" title="All 2 branches missed.">            for (int j = 0; j &lt; gridSizeY; j++) {</span>
-<span class="nc" id="L43">                int randInt = randNum.nextInt(100);</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        for (int i = 0; i &lt; gridSizeX; i++) {</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">            for (int j = 0; j &lt; gridSizeY; j++) {</span>
+<span class="fc" id="L43">                int randInt = randNum.nextInt(100);</span>
 
                 // random bomb distribution
-<span class="nc bnc" id="L46" title="All 2 branches missed.">                if(randInt &lt;= 20){</span>
-<span class="nc" id="L47">                    gameGrid[i][j] = 'm'; //mine</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">                if(randInt &lt;= 20){</span>
+<span class="fc" id="L47">                    gameGrid[i][j] = 'm'; //mine</span>
 //                    int[] currLoc = {i, j};
 //                    //Coordinates.arrayOfCoordinates(i,j);
 //                    System.out.println(Arrays.toString(currLoc));
                     //this.mineLocation = ArrayUtils.add(this.mineLocation, currLoc) ;//store location
                 }
                 else{
-<span class="nc" id="L54">                    gameGrid[i][j] = 'o'; //avail cell</span>
+<span class="fc" id="L54">                    gameGrid[i][j] = 'o'; //avail cell</span>
                 }
             }
         }
-<span class="nc" id="L58">        this.gameGrid = gameGrid;</span>
+<span class="fc" id="L58">        this.gameGrid = gameGrid;</span>
         //System.out.println(Arrays.deepToString(this.gameGrid));
-<span class="nc" id="L60">        return this.gameGrid;</span>
+<span class="fc" id="L60">        return this.gameGrid;</span>
     }
 
     public void viewGrid() {
