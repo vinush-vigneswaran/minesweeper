@@ -16,16 +16,25 @@ public class Coordinates {
         this.x = x;
         this.y = y;
     }
-
+    public Coordinates(){
+    }
     //////////////////////////////////Methods//////////////////////////////////
 
-    public ArrayList<int[]> arrayOfCoordinates(int x, int y){
-        //this.coordinateList = coordinateList;
+    public void addToCoordinatesArrayList(int x, int y){
+    //public ArrayList<int[]> arrayOfCoordinates(int x, int y){
+        this.coordinateList = coordinateList;
 
-        //int[] coordinates = {x, y};
-        //this.coordinateList.add(coordinates);
-        return this.coordinateList;
+        int[] coordinates = {x, y};
+        this.coordinateList.add(coordinates);
+        //return this.coordinateList;
     }
+
+    public ArrayList<int[]> coordinateArrayList(){
+
+        return this.coordinateList;
+
+    }
+
 
 
 }
