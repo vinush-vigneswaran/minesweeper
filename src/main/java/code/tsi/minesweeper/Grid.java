@@ -10,7 +10,8 @@ public class Grid {
     //////////////////////////////////Attribute//////////////////////////////////
     private int gridSizeX;
     private int gridSizeY;
-    private char[][] gameGrid;
+    private char[][] playerGameGrid;
+    private char[][] gameHiddenGrid;
     private int[][] mineNumGrid;
     private Coordinates coord = new Coordinates();
     private boolean gameOver = false;
@@ -60,10 +61,28 @@ public class Grid {
                 }
             }
         }
-        this.gameGrid = gameGrid;
+        this.gameHiddenGrid = gameGrid;
         //System.out.println(Arrays.deepToString(this.gameGrid));
-        return this.gameGrid;
+        return this.gameHiddenGrid;
     }
+
+    public char[][] createNewPlayerGrid() {
+
+        //create a 2d array
+        char playerGameGrid[][]  = new char[this.gridSizeX][this.gridSizeY];
+
+        //assign bomb(b) or field(o) to each cell
+        for (int i = 0; i < gridSizeX; i++) {
+            for (int j = 0; j < gridSizeY; j++) {
+                playerGameGrid[i][j] = 'o';
+            }
+        }
+        this.playerGameGrid = playerGameGrid;
+        //System.out.println(Arrays.deepToString(this.gameGrid));
+        return this.playerGameGrid;
+    }
+
+
 
     public void viewGrid() {
         //print game grid as newline arrays
@@ -71,7 +90,22 @@ public class Grid {
         //to add: coordinate ticks
 
 
-        for (char[] row : this.gameGrid) {
+        for (char[] row : this.gameHiddenGrid) {
+            for (char val : row) {
+                System.out.print(val + "  ");
+            }
+            //split into new lines
+            System.out.println();
+        }
+    }
+
+    public void viewPlayerGrid() {
+        //print game grid as newline arrays
+        //System.out.println(Arrays.deepToString(this.gameGrid));
+        //to add: coordinate ticks
+
+
+        for (char[] row : this.playerGameGrid) {
             for (char val : row) {
                 System.out.print(val + "  ");
             }
@@ -151,6 +185,10 @@ public class Grid {
 
     }
 
+    public ArrayList<int[]> getMineCoordinatesArrayList() {
+        return this.coord.coordinateArrayList();
+    }
+
     public void viewBombGrid() {
         //print game grid as newline arrays
         //System.out.println(Arrays.deepToString(this.gameGrid));
@@ -166,23 +204,43 @@ public class Grid {
         }
     }
 
-    public void setGrid(int x, int y, char c) {
-        this.gameGrid[x][y] = c;
+
+
+    public void setPlayerGrid(int x, int y, char c) {
+        this.playerGameGrid[x][y] = c;
     }
 
-    public char[][] getGrid() {
-        return this.gameGrid;
+    public char[][] getPlayerGrid() {
+        return this.playerGameGrid;
+    }
+
+
+    public void setHiddenGrid(int x, int y, char c) {
+        this.gameHiddenGrid[x][y] = c;
+    }
+
+    public char[][] getHiddenGrid() {
+        return this.gameHiddenGrid;
     }
 
     public int getBombNum(int x, int y) {
         return this.mineNumGrid[x][y];
     }
 
-    public char getGridValue(int x, int y) {
-        return this.gameGrid[x][y];
+    public char getHiddenGridValue(int x, int y) {
+        return this.gameHiddenGrid[x][y];
     }
-    public boolean isGameOver(boolean gameOver) {
+
+    public char getPlayerGridValue(int x, int y) {
+        return this.playerGameGrid[x][y];
+    }
+
+    public boolean isGameOver() {
         this.gameOver = gameOver;
         return this.gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
     }
 }
